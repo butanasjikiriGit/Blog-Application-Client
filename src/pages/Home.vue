@@ -420,11 +420,13 @@
 
 					<p>Comments:</p>
 
-					<div class="comments" v-for="coms in blog.comments" :key="coms._id">
-						
-						<p><i class="bi bi-person-fill"></i> {{coms.name}}</p>
-						<p><strong>Comment:</strong> {{coms.comment}}</p>
+					<div class="parent-comment">
+						<div class="comments" v-for="coms in blog.comments" :key="coms._id">
+							
+							<p><i class="bi bi-person-fill"></i> {{coms.name}}</p>
+							<p><strong>Comment:</strong> {{coms.comment}}</p>
 
+						</div>
 					</div>
 
 					<form @submit.prevent="commentFunc(blog._id)">
@@ -466,11 +468,13 @@
 
 					<p>Comments:</p>
 
-					<div class="comments" v-for="coms in blag.comments" :key="coms._id">
-						
-						<p><i class="bi bi-person-fill"></i> {{coms.name}}</p>
-						<p><strong>Comment:</strong> {{coms.comment}}</p>
+					<div class="parent-comment">
+						<div class="comments" v-for="coms in blag.comments" :key="coms._id">
+							
+							<p><i class="bi bi-person-fill"></i> {{coms.name}}</p>
+							<p><strong>Comment:</strong> {{coms.comment}}</p>
 
+						</div>
 					</div>
 
 					<form @submit.prevent="commentFunc(blag._id)">
@@ -848,7 +852,7 @@
 	}
 
 	.display-blog p:nth-child(3){
-		width: 60%;
+		width: 70%;
 		padding: 10px;
 		font-weight: 500;
 	}
@@ -859,10 +863,21 @@
 		font-weight: bold;
 	}
 
+	.parent-comment{
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		padding: 5px;
+		background-color: whitesmoke;
+		border-radius: 10px;
+	}
+
 	.comments{
 		display: flex;
 		flex-direction: column;
-		width: 50%;
+		width: 90%;
 		padding: 3px;
 		border: solid 1px lightgray;
 		border-top: none;
@@ -886,7 +901,7 @@
 	}
 
 	.input-box{
-		width: 80%;
+		width: 100%;
 		margin-top: 10px;
 		display: flex;
 		justify-content: center;

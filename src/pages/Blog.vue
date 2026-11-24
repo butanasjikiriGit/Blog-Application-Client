@@ -123,11 +123,13 @@
 
 			<p>Comments:</p>
 
-			<div class="comments" v-for="coms in blog.comments" :key="coms._id">
-				
-				<p><i class="bi bi-person-fill"></i> {{coms.name}}</p>
-				<p><strong>Comment:</strong> {{coms.comment}}</p>
+			<div class="parent-comment">
+				<div class="comments" v-for="coms in blog.comments" :key="coms._id">
+					
+					<p><i class="bi bi-person-fill"></i> {{coms.name}}</p>
+					<p><strong>Comment:</strong> {{coms.comment}}</p>
 
+				</div>
 			</div>
 
 			<form @submit.prevent="commentFunc(blog._id)">
@@ -175,7 +177,7 @@
 		top: 20%;
 		z-index: 1;
 		background-color: white;
-		padding: 20px 170px;
+		padding: 20px 40px;
 		border-radius: 10px;
 		box-shadow: 0px 0px 5px gray;
 		display: flex;
@@ -198,16 +200,15 @@
 
 	.blog p:nth-child(3){
 		font-weight: 500;
+		margin: 0px 10px;
 	}
 
 	.blog p:nth-child(4){
 		font-weight: bold;
+		margin-top: 10px;
 	}
 
 	.profile{
-		position: absolute;
-		left: 10px;
-		top: 10px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -230,10 +231,21 @@
 
 
 
+	.parent-comment{
+		width: 100%;
+		height: 200px;
+		overflow: auto;
+		display: flex;
+		flex-direction: column;
+		padding: 0px 20px;
+		background-color: whitesmoke;
+		border-radius: 10px;
+	}
+
 	.comments{
 		display: flex;
 		flex-direction: column;
-		width: 90%;
+		width: 100%;
 		padding: 3px;
 		border: solid 1px lightgray;
 		border-top: none;
@@ -257,7 +269,7 @@
 	}
 
 	.input-box{
-		width: 140%;
+		width: 100%;
 		margin-top: 10px;
 		display: flex;
 		justify-content: center;
@@ -314,6 +326,11 @@
 			padding: 20px 30px;
 		}
 
+		.blog p:nth-child(3){
+			font-weight: 500;
+			margin: 0px;
+		}
+
 		.profile{
 			position: relative;
 			width: 100%;
@@ -333,7 +350,11 @@
 			left: 0%;
 			top: 5%;
 			padding: 20px 20px;
-			position: static;
+		}
+
+		.blog p:nth-child(3){
+			font-weight: 500;
+			margin: 0px;
 		}
 
 		.profile{
