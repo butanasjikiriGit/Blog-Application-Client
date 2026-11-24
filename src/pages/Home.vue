@@ -110,7 +110,7 @@
 		try {
 
 			const response = await api.get('/blogs/getAllBlog');
-			blogs.value = response.data;
+			blogs.value = response.data.reverse();
 
 		} catch (err) {
 
