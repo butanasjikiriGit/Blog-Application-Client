@@ -333,6 +333,7 @@
 	@media (max-width: 407px){
 		.body{
 			display: relative;
+			height: 1000px;
 		}
 
 		.login-body{
@@ -344,6 +345,7 @@
 
 		.login-box{
 			padding: 10px;
+			margin-bottom: 100px;
 		}
 
 		.login-box h2, .login-box p:nth-child(2){
