@@ -333,6 +333,7 @@
 			left: 0%;
 			top: 5%;
 			padding: 20px 20px;
+			position: static;
 		}
 
 		.profile{
